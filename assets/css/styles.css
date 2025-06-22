@@ -1,0 +1,289 @@
+/* ===========================================
+   RESET Y CONFIGURACIÓN BÁSICA
+   =========================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   VARIABLES CSS
+   =========================================== */
+:root {
+    --primary-green: #2E8B57;
+    --secondary-green: #6B8E23;
+    --accent-green: #556B2F;
+    --light-green: #90EE90;
+    --medium-green: #98FB98;
+    --sky-blue: #87CEEB;
+    --progress-start: #32CD32;
+    --progress-end: #228B22;
+    --white-overlay: rgba(255, 255, 255, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-red: #FF6B6B;
+    --gradient-teal: #4ECDC4;
+}
+
+/* ===========================================
+   ESTILOS GENERALES
+   =========================================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--sky-blue) 0%, var(--medium-green) 50%, var(--light-green) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* ===========================================
+   CONTENEDOR PRINCIPAL
+   =========================================== */
+.container {
+    text-align: center;
+    background: var(--white-overlay);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow-color);
+    max-width: 600px;
+    margin: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+/* ===========================================
+   CAPYBARA PRINCIPAL
+   =========================================== */
+.capybara-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.capybara-icon:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================================
+   TIPOGRAFÍA
+   =========================================== */
+h1 {
+    color: var(--primary-green);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.subtitle {
+    color: var(--secondary-green);
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.construction-text {
+    color: var(--accent-green);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.coming-soon {
+    background: linear-gradient(45deg, var(--gradient-red), var(--gradient-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* ===========================================
+   HERRAMIENTAS ANIMADAS
+   =========================================== */
+.tools {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.tool {
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+/* ===========================================
+   BARRA DE PROGRESO
+   =========================================== */
+.progress-bar {
+    background: #E0E0E0;
+    border-radius: 25px;
+    height: 20px;
+    margin: 2rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    background: linear-gradient(90deg, var(--progress-start), var(--progress-end));
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    animation: loading 4s ease-in-out infinite;
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 2s ease-in-out infinite;
+}
+
+/* ===========================================
+   CAPIBARAS FLOTANTES
+   =========================================== */
+.floating-capibaras {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.capybara-1 {
+    top: 10%;
+    left: 10%;
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+.capybara-2 {
+    top: 60%;
+    right: 15%;
+    animation: float-slow 8s ease-in-out infinite reverse;
+}
+
+.capybara-3 {
+    bottom: 20%;
+    left: 20%;
+    animation: float-slow 7s ease-in-out infinite;
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-30px) rotate(5deg); 
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    25% { 
+        transform: translateY(-10px); 
+    }
+    50% { 
+        transform: translateY(0px); 
+    }
+    75% { 
+        transform: translateY(-5px); 
+    }
+}
+
+@keyframes loading {
+    0% { 
+        width: 0%; 
+    }
+    50% { 
+        width: 75%; 
+    }
+    100% { 
+        width: 0%; 
+    }
+}
+
+@keyframes shine {
+    0% { 
+        transform: translateX(-100%); 
+    }
+    100% { 
+        transform: translateX(100%); 
+    }
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .capybara-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .floating-capibaras {
+        display: none;
+    }
+    
+    .tools {
+        gap: 0.5rem;
+    }
+    
+    .tool {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        margin: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .construction-text {
+        font-size: 1rem;
+    }
+}

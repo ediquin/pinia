@@ -3,201 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio en Construcción - Capibara Zone</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #90EE90 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 2rem;
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-        
-        .capybara-icon {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1rem;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        h1 {
-            color: #2E8B57;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .subtitle {
-            color: #6B8E23;
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .construction-text {
-            color: #556B2F;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-        
-        .progress-bar {
-            background: #E0E0E0;
-            border-radius: 25px;
-            height: 20px;
-            margin: 2rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .progress {
-            background: linear-gradient(90deg, #32CD32, #228B22);
-            height: 100%;
-            width: 0%;
-            border-radius: 25px;
-            animation: loading 4s ease-in-out infinite;
-            position: relative;
-        }
-        
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shine 2s ease-in-out infinite;
-        }
-        
-        @keyframes loading {
-            0% { width: 0%; }
-            50% { width: 75%; }
-            100% { width: 0%; }
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-
-        .floating-capibaras {
-            position: fixed;
-            font-size: 2rem;
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .capybara-1 {
-            top: 10%;
-            left: 10%;
-            animation: float-slow 6s ease-in-out infinite;
-        }
-        
-        .capybara-2 {
-            top: 60%;
-            right: 15%;
-            animation: float-slow 8s ease-in-out infinite reverse;
-        }
-        
-        .capybara-3 {
-            bottom: 20%;
-            left: 20%;
-            animation: float-slow 7s ease-in-out infinite;
-        }
-        
-        @keyframes float-slow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(5deg); }
-        }
-        
-        .tools {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .tool {
-            font-size: 2rem;
-            animation: bounce 2s ease-in-out infinite;
-            animation-delay: var(--delay);
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0px); }
-            25% { transform: translateY(-10px); }
-            50% { transform: translateY(0px); }
-            75% { transform: translateY(-5px); }
-        }
-        
-        .coming-soon {
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-                margin: 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .capybara-icon {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .floating-capibaras {
-                display: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Sitio web en construcción - Capybara Zone">
+    <meta name="author" content="Equipo Capybara">
+    <title>Sitio en Construcción - Capybara Zone</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- Capibaras flotantes de fondo -->
     <div class="floating-capibaras capybara-1">🦫</div>
     <div class="floating-capibaras capybara-2">🦫</div>
     <div class="floating-capibaras capybara-3">🦫</div>
 
-    <div class="container">
-        <img src="https://cdn-icons-png.flaticon.com/512/235/235359.png" alt="Capybara" class="capybara-icon">
-        
+    <!-- Contenedor principal -->
+    <main class="container">
+        <img src="assets/images/capybara-icon.png" alt="Capybara trabajando" class="capybara-icon">
         <h1>¡Sitio en Construcción!</h1>
         <p class="subtitle">Los capibaras están trabajando duro</p>
         
@@ -205,50 +26,23 @@
             <p>El equipo de capibaras trabaja en una página web para una Capibapiña.</p>
         </div>
         
+        <!-- Herramientas animadas -->
         <div class="tools">
-            <span class="tool" style="--delay: 0s">🔨</span>
-            <span class="tool" style="--delay: 0.5s">🔧</span>
-            <span class="tool" style="--delay: 1s">⚙️</span>
-            <span class="tool" style="--delay: 1.5s">🎨</span>
+            <span class="tool" style="--delay: 0s" aria-label="Martillo">🔨</span>
+            <span class="tool" style="--delay: 0.5s" aria-label="Llave inglesa">🔧</span>
+            <span class="tool" style="--delay: 1s" aria-label="Engranaje">⚙️</span>
+            <span class="tool" style="--delay: 1.5s" aria-label="Pincel">🎨</span>
         </div>
         
-        <div class="progress-bar">
+        <!-- Barra de progreso -->
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de construcción">
             <div class="progress"></div>
         </div>
         
         <p class="coming-soon">¡Muy pronto estaremos listos!</p>
-    </div>
+    </main>
 
-    <script>
-        // Agregar más capibaras flotantes dinámicamente
-        function createFloatingCapybara() {
-            const capybara = document.createElement('div');
-            capybara.innerHTML = '🦫';
-            capybara.className = 'floating-capibaras';
-            capybara.style.left = Math.random() * 100 + '%';
-            capybara.style.top = Math.random() * 100 + '%';
-            capybara.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            capybara.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
-            document.body.appendChild(capybara);
-            
-            // Remover después de un tiempo
-            setTimeout(() => {
-                capybara.remove();
-            }, 10000);
-        }
-        
-        // Crear capibaras flotantes periódicamente
-        setInterval(createFloatingCapybara, 3000);
-        
-        // Efecto de clic en el capybara principal
-        document.querySelector('.capybara-icon').addEventListener('click', function() {
-            this.style.transform = 'scale(1.2) rotate(360deg)';
-            this.style.transition = 'transform 0.5s ease';
-            
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 500);
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
